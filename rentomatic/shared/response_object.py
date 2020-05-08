@@ -7,7 +7,7 @@ class ResponseSuccess(object):
 
     def __nonzero__(self):
         return True
-
+    # __nonzero__ 将类转化为布尔值返回如果响应成功返回true
     __bool__ = __nonzero__
 
 
@@ -49,3 +49,8 @@ class ResponseFailure(object):
         message = "\n".join(["{}: {}".format(err['parameter'], err['message'])
                              for err in invalid_request_object.errors])
         return cls.build_parameters_error(message)
+
+
+class StorageRepo(object):
+    def list(self, fliters):
+            raise NotImplementedError('do not have function list')
