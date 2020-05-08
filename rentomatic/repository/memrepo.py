@@ -1,7 +1,8 @@
 from rentomatic.domain import storageroom as sr
+from rentomatic.shared.response_object import StorageRepo
 
 
-class MemRepo:
+class MemRepo(StorageRepo):
 
     def __init__(self, entries=None):
         self._entries = []
